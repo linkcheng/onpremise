@@ -27,7 +27,7 @@ x-defaults: &defaults
     SENTRY_EMAIL_HOST: smtp
   volumes:
     - sentry-data:/var/lib/sentry/files
-
+    - ./config.yml:/etc/sentry/config.yml
 
 services:
   smtp:

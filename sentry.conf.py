@@ -304,3 +304,10 @@ if 'GITHUB_APP_ID' in os.environ:
 if 'BITBUCKET_CONSUMER_KEY' in os.environ:
     BITBUCKET_CONSUMER_KEY = env('BITBUCKET_CONSUMER_KEY')
     BITBUCKET_CONSUMER_SECRET = env('BITBUCKET_CONSUMER_SECRET')
+
+
+# Set the default socket timeout to a value that prevents connections
+# to our SMTP server from timing out, due to sendmail's greeting pause
+# feature.
+import socket
+socket.setdefaulttimeout(20)
